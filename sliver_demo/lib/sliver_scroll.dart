@@ -76,7 +76,7 @@ class SliverScroll extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             floating: true,
-            snap: true,
+            snap: false, //控制是否一次性折叠，或是根据滑动距离折叠对应的px
             pinned: true,
             expandedHeight: 170,
             flexibleSpace: FlexibleSpaceBar(
@@ -100,6 +100,7 @@ class SliverScroll extends StatelessWidget {
           ),
           // this.renderTitle('sliver grid'),
           SliverPersistentHeader(
+            // floating: true,            
             pinned: true,
             delegate: StickySectionHeaderDelegate(
               child: Container(

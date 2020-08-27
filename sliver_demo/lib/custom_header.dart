@@ -21,6 +21,21 @@ class CustomSliverHeader extends StatelessWidget {
           SliverFillRemaining(
             child: SafeArea(child: FilmContent()),
           ),
+          SliverToBoxAdapter(
+            child: Image(
+              image: NetworkImage(
+                  'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1402367109,4157195964&fm=27&gp=0.jpg'),
+              width: 100,
+              height: 100,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Image.network(
+              'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1402367109,4157195964&fm=27&gp=0.jpg',
+              width: 100,
+              height: 100,
+            ),
+          ),
         ],
       ),
     );
@@ -128,7 +143,7 @@ class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
             child: Container(
               color: this.makeStickyHeaderBgColor(shrinkOffset),
               child: SafeArea(
-                bottom: false,
+                // bottom: false,
                 child: Container(
                   height: this.collapsedHeight,
                   child: Row(
